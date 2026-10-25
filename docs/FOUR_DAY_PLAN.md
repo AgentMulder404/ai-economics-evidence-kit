@@ -8,6 +8,8 @@ Target: a local, openly licensed starter participants can run in 15 minutes and 
 
 ## Day 1 / Phase 1 — Define economic meaning
 
+Implemented on the Phase 1 branch: package, CLI, ten schemas, four fixtures, data dictionary, and validation tests. See the README for the acceptance commands.
+
 **Outcome:** validated examples with a shared meaning for cost, intent, evidence, and decisions.
 
 Work packages:

@@ -1,6 +1,6 @@
 # Proposed architecture and ontology
 
-Status: implementation contract for the four-day build; not implemented functionality.
+Status: Phase 1 schemas and validation are implemented; storage, calculations, policy evaluation, and the viewer remain planned. See [the v0.1 data dictionary](DATA_DICTIONARY.md) for the exact implemented contract.
 
 ## Data flow
 
@@ -48,7 +48,7 @@ The local append-only decision log supports demo traceability, not a tamper-proo
 ## Proposed repository layout during implementation
 
 ```text
-schemas/                 Versioned JSON Schemas
+src/evidence_kit/schemas/ Versioned JSON Schemas bundled in the package
 examples/                Synthetic JSONL and period inputs
 src/evidence_kit/         CLI, storage, calculations, evidence gate, policies
 src/evidence_kit/ui/      Local viewer

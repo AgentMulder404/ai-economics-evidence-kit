@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evidence-kit:0.1:Workload",
+  "title": "Workload",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "type": {
+      "const": "Workload"
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "customer_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "task_type": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "customer_id",
+    "id",
+    "schema_version",
+    "task_type",
+    "type"
+  ],
+  "additionalProperties": false
+}
