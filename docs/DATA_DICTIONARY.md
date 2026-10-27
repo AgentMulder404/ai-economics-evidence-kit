@@ -1,6 +1,6 @@
 # Schema v0.1 data contract
 
-Phase 1 implements validation only. Passing validation means a dataset is structurally and relationally valid, not that its costs are complete, its margin is assured, or its proposed action is safe. Calculations and evidence gating are later phases.
+This document describes Phase 1 validation; [Phase 2](PHASE_2.md) adds storage and reporting without changing these schemas. Passing validation means a dataset is structurally and relationally valid, not that its costs are complete, its margin is assured, or its proposed action is safe. Calculation and coverage-reporting behavior is documented separately in Phase 2; policy gating remains Phase 3.
 
 ## Format and versioning
 
@@ -47,10 +47,10 @@ Period containment does not establish comparability: Phase 2 must match exact ca
 
 ## Identity, corrections, and relationships
 
-Identical repeated records with the same ID validate successfully. Different contents with the same ID fail. The CLI reports input record count, including exact repeats; Phase 2 will implement storage idempotency.
+Identical repeated records with the same ID validate successfully. Different contents with the same ID fail. The CLI reports input record count, including exact repeats; Phase 2 replay implements storage idempotency; see its usage guide.
 
 An attempt is unique by `(workload_id, logical_task_id, attempt_id)`. Retries share a logical task ID and have different attempt IDs. Failed attempts still incur costs.
 
-A charge is keyed by `(source.system, source.record_id, component)`. Two independent original observations of that key fail. A correction has a new record ID and `supersedes_id`, retains the source key, execution reference, and period, and has a strictly later `observed_at`. Correction chains must not branch. Phase 2 must use the latest correction once, preserving the originals for inspection.
+A charge is keyed by `(source.system, source.record_id, component)`. Two independent original observations of that key fail. A correction has a new record ID and `supersedes_id`, retains the source key, execution reference, and period, and has a strictly later `observed_at`. Correction chains must not branch. Phase 2 reports use the latest correction once, preserving the originals in storage for inspection.
 
 Revenue's customer must match its agreement. Intent's agreement version must match its agreement record. Findings reference intents; recommendations reference findings; decisions reference recommendations. Evidence IDs must reference executions, cost observations, or revenue inputs. The CLI checks these links but does not yet prove that every item of governance evidence belongs to the same economic scope; that is part of Phase 3 evaluation.

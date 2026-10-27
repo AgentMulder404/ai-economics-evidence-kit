@@ -1,6 +1,6 @@
 # Proposed architecture and ontology
 
-Status: Phase 1 schemas and validation are implemented; storage, calculations, policy evaluation, and the viewer remain planned. See [the v0.1 data dictionary](DATA_DICTIONARY.md) for the exact implemented contract.
+Status: Phase 1 schemas/validation and Phase 2 replay, attribution, and calculations are implemented. Policy evaluation and the viewer remain planned. See [Phase 2 behavior](PHASE_2.md). See [the v0.1 data dictionary](DATA_DICTIONARY.md) for the exact implemented contract.
 
 ## Data flow
 
