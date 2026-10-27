@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evidence-kit:0.1:Decision",
+  "title": "Decision",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "type": {
+      "const": "Decision"
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "recommendation_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "outcome": {
+      "enum": [
+        "approve",
+        "reject"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "actor",
+    "decided_at",
+    "id",
+    "outcome",
+    "rationale",
+    "recommendation_id",
+    "schema_version",
+    "type"
+  ],
+  "additionalProperties": false
+}

@@ -1,6 +1,6 @@
 # Participant challenge
 
-This guide describes the planned v0.1 experience. Setup commands will be added and clean-machine verified during Day 4; the current repository contains planning documents only.
+This guide describes the planned v0.1 experience. Phase 1 validation is available now; use the quickstart in the repository README. The full replay, evaluator, and viewer experience remains planned for Days 2–4.
 
 > Instrument an AI workflow, detect an economic problem, and propose a governed response supported by evidence.
 

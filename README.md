@@ -2,9 +2,25 @@
 
 An open-source hackathon project for AI economic observability, a shared ontology, and evidence-based governance, inspired by NemulAI's AI Margin Assurance model.
 
-**Status: planning scaffold.** No SDK, evaluator, dashboard, or NemulAI integration is implemented yet. The four-day plan below defines the first runnable release.
+**Status: Phase 1 implemented.** Versioned schemas, a read-only validation CLI, four synthetic datasets, and relationship checks are available. Ingestion, calculations, policy evaluation, the viewer, and NemulAI integration remain planned.
 
 > Make your AI app explain its economics—and know when there is not enough evidence to recommend a change.
+
+## Run Phase 1
+
+Requires Python 3.11 or later. From this repository:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[dev]'
+evidence-kit validate examples/*.jsonl
+python -m pytest -q
+```
+
+All four datasets should print `VALID`. For structured output, use `evidence-kit validate --json examples/healthy.jsonl`. Exit status is 0 when every file passes, 1 for invalid or unreadable data, and 2 for CLI usage errors. Errors identify the file, line, record, and offending field where available. The CLI reads local files and does not send data to a service.
+
+After changing source code, reinstall with `python -m pip install '.[dev]'` before testing the installed package. See the [data dictionary](docs/DATA_DICTIONARY.md) and [fixture expectations](examples/README.md). Validation accepts explicit unknowns; it does not certify economic completeness.
 
 ## Start here
 

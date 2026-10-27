@@ -1,0 +1,3 @@
+recursive-include examples *.jsonl *.md
+recursive-include docs *.md
+include CONTRIBUTING.md

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evidence-kit:0.1:EconomicIntent",
+  "title": "EconomicIntent",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "type": {
+      "const": "EconomicIntent"
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "agreement_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "agreement_version": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "additionalProperties": false
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "service_cost_budget": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{1,8}$"
+    },
+    "target_margin_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "quality_floor": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "quality_metric": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "cost_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "permitted_interventions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "approval_role": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "agreement_id",
+    "agreement_version",
+    "approval_role",
+    "cost_scope",
+    "currency",
+    "id",
+    "period",
+    "permitted_interventions",
+    "quality_floor",
+    "quality_metric",
+    "schema_version",
+    "service_cost_budget",
+    "target_margin_percent",
+    "type"
+  ],
+  "additionalProperties": false
+}
