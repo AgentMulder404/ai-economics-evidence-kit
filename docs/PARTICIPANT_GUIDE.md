@@ -1,6 +1,6 @@
 # Participant challenge
 
-This guide describes the planned v0.1 experience. Phase 1 validation is available now; use the quickstart in the repository README. The full replay, evaluator, and viewer experience remains planned for Days 2–4.
+This guide describes the planned v0.1 experience. Phase 1 validation and Phase 2 replay/reporting are available now; use the quickstart in the repository README. The evaluator and viewer remain planned for Days 3–4.
 
 > Instrument an AI workflow, detect an economic problem, and propose a governed response supported by evidence.
 

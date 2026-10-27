@@ -8,7 +8,7 @@ Target: a local, openly licensed starter participants can run in 15 minutes and 
 
 ## Day 1 / Phase 1 — Define economic meaning
 
-Implemented on the Phase 1 branch: package, CLI, ten schemas, four fixtures, data dictionary, and validation tests. See the README for the acceptance commands.
+Implemented and merged in Phase 1: package, CLI, ten schemas, four fixtures, data dictionary, and validation tests. See the README for the acceptance commands.
 
 **Outcome:** validated examples with a shared meaning for cost, intent, evidence, and decisions.
 
@@ -26,6 +26,8 @@ Work packages:
 **Dependency:** none. Freeze schema v0.1 at the end of the day; record later changes explicitly.
 
 ## Day 2 / Phase 2 — Observe and attribute
+
+Implemented on the Phase 2 branch: transactional replay, customer attribution, decimal reporting, and local evidence checks. See [Phase 2 usage](PHASE_2.md). The optional live OpenTelemetry adapter is deferred.
 
 **Outcome:** replay execution records into a local evidence store and explain each attributed cost.
 
